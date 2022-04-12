@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ethan Osorio</title>
+        <style>
+            #wrapper {
+                position: absolute; 
+                left: 50%; transform: translate(-50%); 
+                display: flex; flex-direction: column; 
+                border: 5px solid rgb(0,0,0);
+                padding: 50px;
+                background-color: rgb(255,255,255,0.5);
+            }
+            #background{
+                display: flex; flex-direction: column; 
+            }
+            #border{
+                text-align: center; 
+            }
+        </style>
+	</head>
+	<body>
+        <div id="wrapper">
+            <div id="background">
+                <h1>RGB Background Color Changer</h1>
+                <label id="r">red: 255</label>
+                <input type="range" id="red" value="255" min="0" max="255">
+                <label id="g">green: 255</label>
+                <input type="range" id="green" value="255" min="0" max="255">
+                <label id="b">blue: 255</label>
+                <input type="range" id="blue" value="255" min="0" max="255">
+            </div>
+            <div id="border">
+                <h1>RGB Border Color Changer</h1>
+                <label id="rb">red:</label>
+                <input type="text" id="redb" value="0" min="0" max="255">
+                <label id="gb">green:</label>
+                <input type="text" id="greenb" value="0" min="0" max="255">
+                <label id="bb">blue:</label>
+                <input type="text" id="blueb" value="0" min="0" max="255"><br><br>
+                <label id="wb">width:</label>
+                <input type="text" id="width" value="5" min="0" max="255"><br><br>
+                <button onclick="border()">Update Border</button>
+            </div>
+        </div>
+
+		<script>
+			function change() {
+                let r = document.getElementById('red').value;
+                let g = document.getElementById('green').value;
+                let b = document.getElementById('blue').value;
+                let color = 'rgb(' + r + ',' + g + ',' + b + ')';
+                document.body.style.backgroundColor = color;
+                document.getElementById('r').innerHTML = 'red: ' + r;
+                document.getElementById('g').innerHTML = 'green: ' + g;
+                document.getElementById('b').innerHTML = 'blue: ' + b;
+            }
+            document.getElementById('red').addEventListener('input', change)
+            document.getElementById('green').addEventListener('input', change)
+            document.getElementById('blue').addEventListener('input', change)
+
+            function border() {
+                let rb = document.getElementById('redb').value;
+                let gb = document.getElementById('greenb').value;
+                let bb = document.getElementById('blueb').value;
+                let w = document.getElementById('width').value;
+                let color = 'rgb(' + rb + ',' + gb + ',' + bb + ')';
+                let border = w + 'px' + ' solid ' + color;
+                document.getElementById('wrapper').style.border = border;
+            }
+		</script>
+	</body>
+</html>

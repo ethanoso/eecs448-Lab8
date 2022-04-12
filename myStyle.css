@@ -1,0 +1,40 @@
+body{
+    background-image: url(images/img5.jpg); background-size: 100%;
+    background-repeat: no-repeat; background-attachment: fixed;
+    background-position: bottom;
+}
+#profile img{
+    border-radius: 50%; 
+    width: 250px;
+    height: 250px;
+}
+.bio{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    width: 50%;
+    border-radius: 10px; 
+}
+.bio p{
+    font-family: arial; font-size: 22pt;
+    text-align: center;
+    color: white;
+}
+.bio #video{
+    position: relative;
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.bio #links{
+    padding: 10px
+}
+.bio #links a{
+    color: white;
+    padding: 10px;
+}
+.bio #links a:hover{
+    color: lightblue;
+}

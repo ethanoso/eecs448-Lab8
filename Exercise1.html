@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ethan Osorio</title>
+	</head>
+	<body>
+		<div>
+			<label for="password">Password (8 characters minimum):</label>
+			<input type="password" id="password" name="password">
+		</div>
+
+		<div>
+			<label for="pass">Re-enter Password:</label>
+			<input type="password" id="passCheck" name="passCheck">
+		</div>
+
+		<button onclick="validate()">Validate</button>
+		
+		<p id="message"></p>
+		
+		<script>
+			function validate() {
+				let pass1 = document.getElementById("password").value;
+				let pass2 = document.getElementById("passCheck").value;
+				if(pass1 != pass2){
+					document.getElementById("message").innerHTML = "Error, the passwords entered don't match";
+				}else if(pass1.length < 8)
+					document.getElementById("message").innerHTML = "Error, the passwords are not at least 8 characters long";
+				else{
+					document.getElementById("message").innerHTML = "Valid";
+				}
+			}
+		</script>
+		
+		
+	</body>
+</html>
